@@ -23,7 +23,8 @@ const signup = (req, res) => {
           .then((newUser) => {
             const token = jwt.sign(
               {
-                EmployeeID: newUser.EmployeeID
+                EmployeeID: newUser.EmployeeID,
+                Type : newUser.Type
               },
               secretKey,
               {
@@ -63,6 +64,7 @@ const login = (req, res) => {
               const token = jwt.sign(
                 {
                   EmployeeID: foundUser.EmployeeID,
+                  Type:foundUser.Type
                   // user: req.body.user 
                 },
                 secretKey,
