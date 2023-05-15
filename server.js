@@ -21,24 +21,24 @@ app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
 
-const verifyToken = (req, res, next) => {
-  // let token = req.cookies.jwt
-  const bearerHeader = req.headers["authorization"];
-  if (typeof bearerHeader !== "undefined") {
-    const bearer = bearerHeader.split(" ");
-    const bearerToken = bearer[1];
-    req.token = bearerToken;
-  }
-  jwt.verify(req.token, "test_jwt", (err, decodedUser) => {
-    if (err || !decodedUser)
-      return res.status(401).json({ error: "Unauthorized Request" });
-    req.user = decodedUser;
-    next();
-  });
-};
+// const verifyToken = (req, res, next) => {
+//   // let token = req.cookies.jwt
+//   const bearerHeader = req.headers["authorization"];
+//   if (typeof bearerHeader !== "undefined") {
+//     const bearer = bearerHeader.split(" ");
+//     const bearerToken = bearer[1];
+//     req.token = bearerToken;
+//   }
+//   jwt.verify(req.token, "test_jwt", (err, decodedUser) => {
+//     if (err || !decodedUser)
+//       return res.status(401).json({ error: "Unauthorized Request" });
+//     req.user = decodedUser;
+//     next();
+//   });
+// };
 app.use("/auth", routes.auth);
 
-app.use("/users", verifyToken, routes.users);
+// app.use("/users", verifyToken, routes.users);
 
 app.listen(3002, () => {
   console.log(`Listening on port ${3002}`);

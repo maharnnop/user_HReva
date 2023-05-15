@@ -5,7 +5,7 @@ const ctrl = require('../controllers');
 router.post('/signup', ctrl.auth.signup);
 router.post('/login', ctrl.auth.login);
 router.post('/test', ctrl.auth.test);
-router.get('/validate', ctrl.auth.validate);
+router.post('/validate', ctrl.auth.validate);
 
 // router.post('/logout', ctrl.auth.logout);
 

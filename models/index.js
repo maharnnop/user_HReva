@@ -14,20 +14,21 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
+  console.log(config.database);
   sequelize = new Sequelize(config.database, config.username, config.password, {
-    dialect: "mysql",
     host: 'aws.connect.psdb.cloud',
-    dialectOptions:{
-      "ssl":{
-       "rejectUnauthorized": true
-    }
-   },
+    dialect: 'mysql',
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: true,        
+        }
+    },
    define: {
     timestamps: false //ส่วนตรงนี้ก็เป็นการตั้งค่าเพิ่มเติม
   }
 });
-}
 
+}
 fs
   .readdirSync(__dirname)
   .filter(file => {
@@ -44,7 +45,14 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
+// const User = sequelize.define('UserTable', {
+//   username: Sequelize.STRING,
+//   email: Sequelize.STRING
+// }, {
+//   tableName: 'users' // This is where you specify the table name
+// });
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-
+// sequelize.authenticate();
 module.exports = db;
