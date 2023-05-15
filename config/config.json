@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "Tanachuns",
+    "password": "v2_3xFiG_SB3GcqqGzxsKLNGvheGRiBs",
+    "port":5432,
+    "database": "Tanachuns/tda-db",
+    "host": "db.bit.io",
+    "dialect": "postgres",
+   "ssl":true,
+   "dialectOptions":{
+      "ssl":{
+         "require":true
+      }
+   }
+  },
+  "dev": {
+     "username": "eu2a0a5b2wgtp0uppxwi",
+     "password": "pscale_pw_brH7kWYmOhNczC1kp85EzfEnJvaDTknBJIDWXcXZCPl",
+     "port":3306,
+   "database": "userhr",
+"host": "aws.connect.psdb.cloud",
+"dialect":"mysql",
+  "dialectOptions":{
+     "ssl":{
+      "rejectUnauthorized": true
+   }
+  }
+ }
+    
+}
