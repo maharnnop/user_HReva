@@ -13,8 +13,8 @@
       }
    },
    "dev": {
-      "username": "yvie9ec2yhcolqselevl",
-      "password": "pscale_pw_IDAh4TUsDzszkdFj20r9PQIR94OiTtD5qMZyzt0ZxAz",
+      "username": "ldk5yv0nnvwgetlefqus",
+      "password": "pscale_pw_BzD9SMhysEfUAwKDOfDX8swzlgVtrttj92ILXHA9ejF",
       "port": 3306,
       "database": "hr-evaluation",
       "host": "aws.connect.psdb.cloud",

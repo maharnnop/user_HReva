@@ -24,7 +24,7 @@ const signup = (req, res) => {
             const token = jwt.sign(
               {
                 EmployeeID: newUser.EmployeeID,
-                Type : newUser.Type
+                // Type : newUser.Type
               },
               secretKey,
               {
