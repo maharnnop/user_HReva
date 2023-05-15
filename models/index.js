@@ -19,14 +19,14 @@ if (config.use_env_variable) {
     host: 'aws.connect.psdb.cloud',
     dialect: 'mysql',
     dialectOptions: {
-        ssl: {
-            rejectUnauthorized: true,        
-        }
+      ssl: {
+        rejectUnauthorized: true,
+      }
     },
-   define: {
-    timestamps: false //ส่วนตรงนี้ก็เป็นการตั้งค่าเพิ่มเติม
-  }
-});
+    define: {
+      timestamps: false //ส่วนตรงนี้ก็เป็นการตั้งค่าเพิ่มเติม
+    }
+  });
 
 }
 fs

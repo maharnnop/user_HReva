@@ -12,7 +12,7 @@ const signup = (req, res) => {
   // rsaltes.json({msg:req.body.password})
   bcrypt.hash(password, saltRounds,
     function (err, hash) {
-      console.log(process.env.saltRounds);
+      // console.log(process.env.saltRounds);
       if (err) {
         res.sendStatus(401)
       }
@@ -30,7 +30,7 @@ const signup = (req, res) => {
                 expiresIn: expiresTime,
               }
             );
-            res.json({ jwt: token });          
+            res.json({ jwt: token });
           })
           .catch((err) => {
             res.sendStatus(409);
@@ -97,23 +97,23 @@ const test = (req, res) => {
 
 const validate = (req, res) => {
 
-// Define the JWT secret
-// const jwtSecret = 'your_jwt_secret_here';
+  // Define the JWT secret
+  // const jwtSecret = 'your_jwt_secret_here';
 
-// Define the JWT token to be validated
-const token = req.body.token;
+  // Define the JWT token to be validated
+  const token = req.body.token;
 
-// Verify the JWT token and decode its payload
-jwt.verify(token, secretKey, function(err, decoded) {
-  if (err) {
-    // Invalid token
-    return res.status(409).json({ errors: [{ msg: "JWT validation error" }] });
-  } else {
-    // Valid token
-    res.json({ "JWT payload": decoded });
-  
-  }
-});
+  // Verify the JWT token and decode its payload
+  jwt.verify(token, secretKey, function (err, decoded) {
+    if (err) {
+      // Invalid token
+      return res.status(409).json({ errors: [{ msg: "JWT validation error" }] });
+    } else {
+      // Valid token
+      res.json({ "JWT payload": decoded });
+
+    }
+  });
 
 }
 module.exports = {
